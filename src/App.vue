@@ -14,13 +14,13 @@
       <div class="col s12 m4 l3 blue-grey padding-top" id="left-side">
         <div class="valign-wrapper">
           <div>
-            <h5><span class="grey-text text-lighten-4">José Felipe da Silva</span></h5>
+            <h5><span class="grey-text text-lighten-4">{{ name }}</span></h5>
           </div>
         </div>
         <div class="divider blue-grey darken-2"></div>
         <div class="collection">
           <a href="#/" class="collection-item grey darken-2 white-text">Menu</a>
-          <a href="#/contas" class="collection-item">Usuários</a>
+          <a href="#/usuarios" class="collection-item">Usuários</a>
         </div>
       </div>
       <div class="col s12 m8 l9 grey lighten-3" id="right-side">
@@ -37,12 +37,20 @@
 </template>
 
 <script>
+import Crypto from 'crypto-js'
+
 export default {
   name: 'App',
   styles: [
     require('materialize-css/dist/css/materialize.min.css'),
     require('ionicons/dist/css/ionicons.min.css')
-  ]
+  ],
+  data () {
+    let bytes = Crypto.AES.decrypt(localStorage['email'], 'IsyFWd6DEMedpf2n3Rpe')
+    return {
+      name: bytes.toString(Crypto.enc.Utf8)
+    }
+  }
 }
 </script>
 
