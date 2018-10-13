@@ -1,5 +1,5 @@
 <template>
-   <div class="row" id="login">
+   <div class="row">
     <div class="content-header center-align">
       <h1>Bem vindo ao Controlador de Créditos</h1>
     </div>

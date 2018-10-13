@@ -3,9 +3,14 @@
     <nav class="blue-grey darken-3 z-index">
       <div class="nav-wrapper row">
         <div class="col s12">
-          <a href="#/" class="blue-grey darken-4 brand-logo">Controlador de Créditos</a>
+          <ul id="nav-mobile" class="hide-on-med-and-down">
+            <li><a href="#/"><i class="ion-log-out">Controlador de Créditos</i></a></li>
+          </ul>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#/logout"><i class="ion-log-out"></i></a></li>
+            <li><a href="" @click.prevent="logout"><i class="ion-log-out">Sair</i></a></li>
+          </ul>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <span class="grey-text text-lighten-4">{{ name }}</span>
           </ul>
         </div>
       </div>
@@ -13,14 +18,12 @@
     <div class="row" id="main">
       <div class="col s12 m4 l3 blue-grey padding-top" id="left-side">
         <div class="valign-wrapper">
-          <div>
-            <h5><span class="grey-text text-lighten-4">{{ name }}</span></h5>
-          </div>
         </div>
         <div class="divider blue-grey darken-2"></div>
         <div class="collection">
           <a href="#/" class="collection-item grey darken-2 white-text">Menu</a>
-          <a href="#/usuarios" class="collection-item">Usuários</a>
+          <a href="#/usuarios" v-if="name == 'admin@email.com'" class="collection-item">Usuários</a>
+          <a href="#/clientes" class="collection-item">Clientes</a>
         </div>
       </div>
       <div class="col s12 m8 l9 grey lighten-3" id="right-side">
@@ -37,7 +40,6 @@
 </template>
 
 <script>
-import Crypto from 'crypto-js'
 
 export default {
   name: 'App',
@@ -45,11 +47,21 @@ export default {
     require('materialize-css/dist/css/materialize.min.css'),
     require('ionicons/dist/css/ionicons.min.css')
   ],
-  data () {
-    let bytes = Crypto.AES.decrypt(localStorage['email'], 'IsyFWd6DEMedpf2n3Rpe')
-    return {
-      name: bytes.toString(Crypto.enc.Utf8)
+  methods: {
+    logout: function () {
+      localStorage.removeItem('token')
+      localStorage.removeItem('email')
+      localStorage.removeItem('password')
+      this.$router.push('/login')
     }
+  },
+  computed: {
+    name () {
+      return this.$store.state.user.userView
+    }
+  },
+  created () {
+    this.$store.dispatch('getUser')
   }
 }
 </script>

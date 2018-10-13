@@ -55,6 +55,7 @@ export default {
         localStorage['email'] = Crypto.AES.encrypt(this.user.email, 'IsyFWd6DEMedpf2n3Rpe')
         localStorage['password'] = Crypto.AES.encrypt(this.user.password, 'IsyFWd6DEMedpf2n3Rpe')
         this.$router.push('/')
+        location.reload()
       }).catch((err) => {
         this.flash(err.body, 'error')
         this.$router.push('/login')
