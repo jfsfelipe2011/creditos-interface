@@ -14,7 +14,7 @@
       <div class="col s12 m4 l3 blue-grey padding-top" id="left-side">
         <div class="valign-wrapper">
           <div>
-            <h5><span class="grey-text text-lighten-4">Usuário: José Felipe da Silva</span></h5>
+            <h5><span class="grey-text text-lighten-4">José Felipe da Silva</span></h5>
           </div>
         </div>
         <div class="divider blue-grey darken-2"></div>
