@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="content-header">
+    <h1>Usuários <small>{{ sub_title }}</small></h1>
+    <div class="grey-text">
+      <small>
+        <a href="#/">Controlador de Créditos</a> >
+        <a href="#/usuarios">Usuários</a> >
+        <span>{{ navegacao }}</span>
+      </small>
+    </div>
+  </div>
+
+  <div class="card col s12">
+    <div class="card-content">
+      <form class="row" autocomplete="off" @submit.prevent="save">
+        <div class="input-field col s12">
+          <h5>Dados do Usuário</h5>
+        </div>
+        <div class="input-field col s6">
+          <input type="text" id="name" class="validate" placeholder="Digite o nome do Usuário" required>
+          <label for="title" class="active">Nome</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="email" id="email" class="validate" placeholder="Digite o e-mail do Usuário" required>
+          <label for="title" class="active">E-mail</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="number" id="password" class="validate" placeholder="Digite a senha do Usuário" required>
+          <label for="agency" class="active">Senha</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="submit"class="waves-effect waves-light btn-large blue-grey darken-4" value="salvar">
+        </div>
+      </form>
+    </div>
+    <div class="card-action">
+      <a href="#/usuarios">Voltar</a>
+    </div>
+  </div>
+</div>
