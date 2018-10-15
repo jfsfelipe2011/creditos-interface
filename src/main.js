@@ -23,7 +23,6 @@ const router = new VueRouter({
   routes
 })
 
-LoginInterceptors.check_auth()
 LoginInterceptors.check_empty_token(router)
 
 sync(store, router)

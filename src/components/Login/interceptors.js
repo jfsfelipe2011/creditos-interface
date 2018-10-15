@@ -1,5 +1,3 @@
-import Vue from 'vue'
-
 let getToken = function () {
   let token = localStorage['token']
   if (!token) {
@@ -18,12 +16,5 @@ export default {
     if (!token.access_token) {
       login(router)
     }
-  },
-  check_auth: function () {
-    let token = getToken()
-    Vue.http.interceptors.push((request, next) => {
-      request.headers.set('Authorization', 'Bearer ' + token.access_token)
-      next()
-    })
   }
 }

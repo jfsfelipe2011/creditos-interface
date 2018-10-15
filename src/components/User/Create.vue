@@ -7,6 +7,16 @@ export default {
       navegacao: 'Criação'
     }
   },
-  template: require('./form.html')
+  template: require('./form.html'),
+  methods: {
+    save () {
+      this.$store.dispatch('newUser', this.user).then(() => {
+        // this.$router.push('/usuarios')
+        console.log('falso positivo')
+      }).catch((err) => {
+        this.flash(err.body.name.notEmpty, 'error')
+      })
+    }
+  }
 }
 </script>

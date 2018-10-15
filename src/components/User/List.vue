@@ -11,7 +11,6 @@
     </div>
 
     <div class="card col s12">
-
       <div class="card-content">
         <table class="highlight">
           <thead>
@@ -22,10 +21,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr @click="goTo(1)">
-              <td>0</td>
-              <td>José Felipe da Silva</td>
-              <td>jose@teste.com</td>
+            <tr v-for="(user, index) in users" @click="goTo(1)" :key="index">
+              <td>{{ user.id }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
             </tr>
           </tbody>
         </table>
@@ -44,6 +43,14 @@ export default {
     goTo: function (id) {
       this.$router.push('/usuarios/' + id)
     }
+  },
+  computed: {
+    users () {
+      return this.$store.state.user.userList
+    }
+  },
+  created () {
+    this.$store.dispatch('getUsers')
   }
 }
 </script>
