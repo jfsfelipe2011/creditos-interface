@@ -24,7 +24,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(user, index) in users" @click="goTo(1)" :key="index">
+            <tr v-for="(user, index) in users" @click="goTo(user.id)" :key="index">
               <td>{{ user.id }}</td>
               <td>{{ user.name }}</td>
               <td>{{ user.email }}</td>

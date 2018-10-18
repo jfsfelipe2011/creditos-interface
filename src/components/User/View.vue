@@ -16,9 +16,9 @@
         <div class="row">
           <div class="col s9">
             <div class="card-title">Detalhes do Usuário</div>
-            <p>ID: 0</p>
-            <p>Nome: José Felipe da Silva</p>
-            <p>E-mail: jose@teste.com</p>
+            <p>ID: {{ user.id }}</p>
+            <p>Nome: {{ user.name }}</p>
+            <p>E-mail: {{ user.email }}</p>
           </div>
         </div>
         <div class="row">
@@ -42,6 +42,14 @@ export default {
     remove: function (id) {
       this.$router.push('/usuarios')
     }
+  },
+  computed: {
+    user () {
+      return this.$store.state.user.singleUser
+    }
+  },
+  created () {
+    this.$store.dispatch('getSingleUser', this.$route.params.id)
   }
 }
 </script>

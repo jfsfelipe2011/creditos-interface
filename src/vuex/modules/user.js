@@ -11,6 +11,7 @@ let setHeader = function () {
 export default {
   state: {
     userView: {},
+    singleUser: {},
     userList: []
   },
   mutations: {
@@ -19,6 +20,9 @@ export default {
     },
     updateUserList (state, data) {
       state.userList = data
+    },
+    updateSingleUser (state, data) {
+      state.singleUser = data
     }
   },
   actions: {
@@ -36,6 +40,12 @@ export default {
     newUser (context, data) {
       setHeader()
       return Vue.http.post('http://creditos/users', data)
+    },
+    getSingleUser (context, id) {
+      setHeader()
+      Vue.http.get('http://creditos/users/' + id).then(response => {
+        context.commit('updateSingleUser', response.data)
+      })
     }
   }
 }
