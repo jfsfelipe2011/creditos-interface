@@ -20,15 +20,15 @@
           <flash-message></flash-message>
         </div>
         <div class="input-field col s6">
-          <input type="text" id="name" class="validate" placeholder="Digite o nome do Usuário" required>
+          <input type="text" v-model="user.name" id="name" class="validate" placeholder="Digite o nome do Usuário" autocomplete="off" required>
           <label for="title" class="active">Nome</label>
         </div>
         <div class="input-field col s6">
-          <input type="email" id="email" class="validate" placeholder="Digite o e-mail do Usuário" required>
+          <input type="email" v-model="user.email" id="email" class="validate" placeholder="Digite o e-mail do Usuário" autocomplete="off" required>
           <label for="email" class="active">E-mail</label>
         </div>
         <div class="input-field col s6">
-          <input type="password" id="password" class="validate" placeholder="Digite a senha do Usuário" required>
+          <input type="password" v-model="user.password" id="password" class="validate" placeholder="Digite a senha do Usuário" autocomplete="off" required>
           <label for="password" class="active">Senha</label>
         </div>
         <div class="input-field col s6">

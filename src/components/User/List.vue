@@ -12,6 +12,9 @@
 
     <div class="card col s12">
       <div class="card-content">
+        <div class="col s12 center-align">
+          <flash-message></flash-message>
+        </div>
         <table class="highlight">
           <thead>
             <tr>
