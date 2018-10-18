@@ -46,6 +46,10 @@ export default {
       Vue.http.get('http://creditos/users/' + id).then(response => {
         context.commit('updateSingleUser', response.data)
       })
+    },
+    removeUser (context, id) {
+      setHeader()
+      return Vue.http.delete('http://creditos/users/' + id)
     }
   }
 }

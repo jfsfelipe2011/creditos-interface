@@ -40,7 +40,17 @@ export default {
   name: 'users-view',
   methods: {
     remove: function (id) {
-      this.$router.push('/usuarios')
+      this.$store.dispatch('removeUser', this.$route.params.id).then(() => {
+        this.flash('Usuário removido com sucesso.', 'success', {
+          timeout: 2000
+        })
+        this.$router.push('/usuarios')
+      }).catch((err) => {
+        let result = formatErros.format(err)
+        this.flash(result, 'error', {
+          timeout: 2500
+        })
+      })
     }
   },
   computed: {
