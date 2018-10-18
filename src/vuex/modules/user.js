@@ -50,6 +50,10 @@ export default {
     removeUser (context, id) {
       setHeader()
       return Vue.http.delete('http://creditos/users/' + id)
+    },
+    updateUser (context, data) {
+      setHeader()
+      return Vue.http.put('http://creditos/users/' + data.id, data)
     }
   }
 }

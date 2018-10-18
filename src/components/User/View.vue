@@ -23,8 +23,8 @@
         </div>
         <div class="row">
           <div class="col s12">
-            <a href="#/usuarios/1/editar" class="btn blue">Editar</a>
-            <a href="" class="btn red" @click.prevent="remove(id)" >Excluir</a>
+            <a :href="'#/usuarios/' + user.id + '/editar'" class="btn blue">Editar</a>
+            <a href="" class="btn red" @click.prevent="remove(user.id)" >Excluir</a>
           </div>
         </div>
       </div>
@@ -46,8 +46,7 @@ export default {
         })
         this.$router.push('/usuarios')
       }).catch((err) => {
-        let result = formatErros.format(err)
-        this.flash(result, 'error', {
+        this.flash(err, 'error', {
           timeout: 2500
         })
       })
