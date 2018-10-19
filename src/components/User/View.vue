@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="row">
     <div class="content-header">
-      <h1>Usuário nome <small>Detalhes</small></h1>
+      <h1>Usuário {{ user.name }} <small>Detalhes</small></h1>
       <div class="grey-text">
         <small>
           <a href="#/">Controlador de Créditos</a> >
