@@ -45,7 +45,8 @@ export default {
   name: 'App',
   styles: [
     require('materialize-css/dist/css/materialize.min.css'),
-    require('ionicons/dist/css/ionicons.min.css')
+    require('ionicons/dist/css/ionicons.min.css'),
+    require('vuejs-dialog/dist/vuejs-dialog.min.css')
   ],
   methods: {
     logout: function () {

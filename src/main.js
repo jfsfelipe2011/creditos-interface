@@ -9,11 +9,16 @@ import App from './App'
 import routes from './router'
 import VuexStore from './vuex/store.js'
 import VueFlashMessage from 'vue-flash-message'
+import VuejsDialog from 'vuejs-dialog'
 
 Vue.use(Vuex)
 Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.use(VueFlashMessage)
+Vue.use(VuejsDialog, {
+  okText: 'Sim',
+  cancelText: 'Cancelar'
+})
 
 Vue.http.options.root = process.env.SERVER
 

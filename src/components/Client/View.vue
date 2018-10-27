@@ -41,14 +41,16 @@ export default {
   name: 'clients-view',
   methods: {
     remove: function (id) {
-      this.$store.dispatch('removeClient', this.$route.params.id).then(() => {
-        this.flash('Cliente removido com sucesso.', 'success', {
-          timeout: 2000
-        })
-        this.$router.push('/clientes')
-      }).catch((err) => {
-        this.flash(err, 'error', {
-          timeout: 2500
+      this.$dialog.confirm('Tem certeza que deseja excluir esse cliente?').then(() => {
+        this.$store.dispatch('removeClient', this.$route.params.id).then(() => {
+          this.flash('Cliente removido com sucesso.', 'success', {
+            timeout: 2000
+          })
+          this.$router.push('/clientes')
+        }).catch((err) => {
+          this.flash(err, 'error', {
+            timeout: 2500
+          })
         })
       })
     }
