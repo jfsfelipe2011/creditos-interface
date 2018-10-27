@@ -4,7 +4,7 @@
       <h1>Clientes <small>Gerenciamento de Clientes</small></h1>
       <div class="grey-text">
         <small>
-          <a href="#/">Controlador de Créditos</a>
+          <a href="#/">Controlador de Créditos</a> >
           <span>Clientes</span>
         </small>
       </div>

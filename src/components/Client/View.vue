@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="row">
     <div class="content-header">
-      <h1>Cliente nome <small>Detalhes</small></h1>
+      <h1>Clientes <small>Detalhes</small></h1>
       <div class="grey-text">
         <small>
           <a href="#/">Controlador de Créditos</a> >
@@ -24,7 +24,7 @@
         <div class="row">
           <div class="col s12">
             <a :href="'#/clientes/' + client.id + '/editar'" class="btn blue">Editar</a>
-            <a href="#" class="btn btn blue">Créditos</a>
+            <a :href="'#/creditos/' + client.id " class="btn btn blue">Créditos</a>
             <a href="" class="btn red" @click.prevent="remove(client.id)" >Excluir</a>
           </div>
         </div>

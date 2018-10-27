@@ -4,7 +4,7 @@
       <h1>Usuários <small>Gerenciamento de Usuários</small></h1>
       <div class="grey-text">
         <small>
-          <a href="#/">Controlador de Créditos</a>
+          <a href="#/">Controlador de Créditos</a> >
           <span>Usuários</span>
         </small>
       </div>

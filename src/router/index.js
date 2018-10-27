@@ -9,6 +9,11 @@ import ClientsList from '../components/Client/List'
 import ClientsCreate from '../components/Client/Create'
 import ClientsView from '../components/Client/View'
 import ClientsEdit from '../components/Client/Edit'
+import CreditsList from '../components/Credit/List'
+import CreditsRecarga from '../components/Credit/Recarregar'
+import CreditsRemocao from '../components/Credit/Remover'
+import CreditsEstorno from '../components/Credit/Estornar'
+import CreditsExtrato from '../components/Credit/Extrato'
 
 let getToken = function () {
   let token = localStorage['token']
@@ -57,7 +62,12 @@ const routes = [
   {path: '/clientes', name: 'ClientsList', component: ClientsList, beforeEnter: authenticated},
   {path: '/clientes/novo', name: 'ClientsCreate', component: ClientsCreate, beforeEnter: authenticated},
   {path: '/clientes/:id', name: 'ClientsView', component: ClientsView, beforeEnter: authenticated},
-  {path: '/clientes/:id/editar', name: 'ClientsEdit', component: ClientsEdit, beforeEnter: authenticated}
+  {path: '/clientes/:id/editar', name: 'ClientsEdit', component: ClientsEdit, beforeEnter: authenticated},
+  {path: '/creditos/:clienteId', name: 'CreditsList', component: CreditsList, beforeEnter: authenticated},
+  {path: '/creditos/:clienteId/recarregar', name: 'CreditsRecarga', component: CreditsRecarga, beforeEnter: authenticated},
+  {path: '/creditos/:clienteId/remover', name: 'CreditsRemocao', component: CreditsRemocao, beforeEnter: authenticated},
+  {path: '/creditos/:clienteId/estornar', name: 'CreditsEstorno', component: CreditsEstorno, beforeEnter: authenticated},
+  {path: '/creditos/:clienteId/extrato', name: 'CreditsExtrato', component: CreditsExtrato, beforeEnter: authenticated}
 ]
 
 export default routes
