@@ -19,6 +19,8 @@
             <p>ID: {{ client.id }}</p>
             <p>Nome: {{ client.name }}</p>
             <p>E-mail: {{ client.email }}</p>
+            <p>Documento: {{ client.document }}</p>
+            <p>Telefone: {{ client.fone }}</p>
           </div>
         </div>
         <div class="row">
